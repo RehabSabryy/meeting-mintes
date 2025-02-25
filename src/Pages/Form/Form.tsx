@@ -112,7 +112,7 @@ export default function Form() {
   return (
     <>
       <Header />
-      <div className={`borderr-start borderr-end ${isMobile ? "" : "form-layout"}`}>
+      <div className={` ${isMobile ? "" : "form-layout borderr-start borderr-end"}`}>
         <div className={`d-flex flex-column justify-content-center align-items-center w-100 ${isMobile ? "p-2" : "p-5"}`}>
           <form onSubmit={handleSubmit} className="p-4 w-75">
             <div className="row">
