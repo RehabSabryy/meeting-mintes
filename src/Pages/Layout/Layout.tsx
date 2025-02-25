@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Header from "./Header/Header";
@@ -8,20 +8,11 @@ import DisplayPage from "../DisplayPage/DisplayPage";
 export default function Layout() {
   const componentRef = useRef<HTMLDivElement>(null);
   const [pages, setPages] = useState<string[]>([]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const handlePagesComputed = (computedPages: string[]) => {
     console.log("Computed Pages:", computedPages);
     setPages(computedPages);
   };
-
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
   const handlePrint = async () => {
     if (!componentRef.current) return;
@@ -50,7 +41,7 @@ export default function Layout() {
       <div className="p-3 position-fixed " style={{right:"20px", zIndex:"1000"}}> 
        <button className="btn bg-color" onClick={handlePrint}>Export to PDF</button>
       </div>
-      <div ref={componentRef} className={` ${isMobile ? "" : "a4-container"}`}>
+      <div ref={componentRef} className="a4-container">
         {pages.map((pageContent, index) => (
           <div key={index} className="a4-page" style={{ breakAfter: "page" }}>
             <Header />
