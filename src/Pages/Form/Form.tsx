@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -34,8 +34,17 @@ export default function Form() {
 
   const [conclusions, setConclusions] = useState<string[]>([]);
   const [newConclusion, setNewConclusion] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,8 +112,8 @@ export default function Form() {
   return (
     <>
       <Header />
-      <div className="borderr-start borderr-end form-layout">
-        <div className="d-flex flex-column justify-content-center align-items-center w-100 p-5">
+      <div className={`borderr-start borderr-end ${isMobile ? "" : "form-layout"}`}>
+        <div className={`d-flex flex-column justify-content-center align-items-center w-100 ${isMobile ? "p-2" : "p-5"}`}>
           <form onSubmit={handleSubmit} className="p-4 w-75">
             <div className="row">
               <div className="col-md-6 mb-3">
