@@ -1,0 +1,182 @@
+:root {
+  --primary-color : #161611;
+  --secondary-color : #E2C58A;
+  --tertiary-color : #f0eae8;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; 
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+.bg-color {
+  background-color: var(--secondary-color) !important;
+}
+.border-color {
+  border-color: var(--primary-color) !important;
+}
+.box {
+  width: 75px;
+  height: 100px;
+}
+.borderr-end {
+  border-right: 1.5px solid var(--primary-color) !important;
+}
+.borderr-start {
+  border-left: 1.5px solid var(--primary-color) !important;
+}
+.borderr-bottom {
+  border-bottom: 1.5px solid var(--primary-color) !important;
+}
+.borderr-top {
+  border-top: 1.5px solid var(--primary-color) !important;
+}
+.align-logo {
+  /* place-content: center; */
+  padding:10px 20px;
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+.header-height {
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meeting-minutes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.end {
+  width: 76px;
+}
+.footer-svg {
+  d: 100px;
+}
+.img-width {
+  width: 250px;
+}
+.section-header {
+  background-color: var(--secondary-color);
+  padding: 5px 20px;
+  border-bottom: 1.5px solid var(--primary-color) !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-img {
+  d: 100%; 
+}
+
+.footer-img img {
+  d: 100%; 
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer-img {
+  object-fit: cover;
+  display: block;
+  background-color: var(--primary-color);
+  width: 225px;
+}
+
+.a4-container {
+  width: 210mm; 
+  min-height: 297mm; 
+  background: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 0; 
+  position: relative;
+}
+
+.layout {
+  box-sizing: border-box;
+  margin-left:  59px;
+  margin-right: 76px;
+  border-left: 1.5px solid var(--primary-color);
+  border-right: 1.5px solid var(--primary-color);
+  flex-grow: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  height: 100%; 
+}
+.form-layout {
+  box-sizing: border-box;
+  margin-left:  65.5px;
+  margin-right: 76px;
+  border-left: 1.5px solid var(--primary-color);
+  border-right: 1.5px solid var(--primary-color);
+  flex-grow: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  height: 100%; 
+}
+
+.a4-content {
+  height: 941px; 
+  overflow: hidden; 
+}
+.page-break {
+  page-break-after: always;
+}
+
+.footer {
+  flex-shrink: 0; 
+  height: auto; 
+}
+
+/* Print Styles */
+@media print {
+  .a4-container {
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+
+
+.bg-color.end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.page-number {
+  position: absolute;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.form-help {
+  font-size: 12px;
+}
+
