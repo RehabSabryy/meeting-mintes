@@ -9,7 +9,7 @@ export default function DisplayPage({ onPagesComputed }: any) {
   useEffect(() => {
     if (formRef.current) {
       const contentHeight = formRef.current.scrollHeight;
-      const a4HeightPx = 1230; // A4 height in pixels at 96dpi (297mm)
+      const a4HeightPx = 700; // A4 height in pixels at 96dpi (297mm)
 
       console.log("Content Height:", contentHeight);
       console.log("A4 Height:", a4HeightPx);
@@ -100,21 +100,21 @@ export default function DisplayPage({ onPagesComputed }: any) {
           <table className="table border-color borderr-top" style={{marginBottom: "48px"}}>
             <tbody >
               <tr className="borderr-top">
-                <th className="borderr-end text-end table-weight">Title</th>
+                <th className="borderr-end text-end table-weight header-width">Title</th>
                 <td>
                   Meeting with {formData.client} ({formData.project} - {formData.projectType})
                 </td>
               </tr>
               <tr>
-                <th className="borderr-end text-end table-weight">Date & Time</th>
+                <th className="borderr-end text-end table-weight header-width">Date & Time</th>
                 <td>{new Date(formData.dateTime).toLocaleString()}</td>
               </tr>
               <tr>
-                <th className="borderr-end text-end table-weight">Location</th>
+                <th className="borderr-end text-end table-weight header-width">Location</th>
                 <td>{formData.location}</td>
               </tr>
               <tr>
-                <th className="borderr-end text-end table-weight">Attendees</th>
+                <th className="borderr-end text-end table-weight header-width">Attendees</th>
                 <td>{formData.attendees ? formData.attendees : "N/A"}</td>
               </tr>
             </tbody>

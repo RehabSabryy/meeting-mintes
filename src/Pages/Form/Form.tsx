@@ -209,7 +209,7 @@ export default function Form() {
               <label className="form-label">Agenda</label>
               <textarea
                 className="form-control"
-                rows={2}
+                rows={4}
                 placeholder="Enter agenda item"
                 value={newAgenda}
                 onChange={(e) => setNewAgenda(e.target.value)}
@@ -254,7 +254,7 @@ export default function Form() {
               />
               <textarea
                 className="form-control mb-2"
-                rows={2}
+                rows={4}
                 placeholder="Enter Description"
                 value={newDiscussion.description}
                 onChange={(e) =>
@@ -288,6 +288,7 @@ export default function Form() {
                       className="form-control mb-2"
                     />
                     <textarea
+                      rows={4}
                       value={disc.description}
                       onChange={(e) =>
                         editDiscussion(index, disc.title, e.target.value)
@@ -299,48 +300,13 @@ export default function Form() {
               </ul>
             </div>
 
-            {/* Action Items Section */}
-            <div className="mb-3">
-              <label className="form-label">Action Items/ Next Steps</label>
-              <textarea
-                className="form-control"
-                rows={2}
-                placeholder="Enter Action Item"
-                value={newActionItem}
-                onChange={(e) => setNewActionItem(e.target.value)}
-              />
-              <button
-                type="button"
-                className="btn bg-color text-white mt-2"
-                onClick={() => {
-                  if (newActionItem) {
-                    setActionItems([...actionItems, newActionItem]);
-                    setNewActionItem("");
-                  }
-                }}
-              >
-                +
-              </button>
-              <ul className="mt-2">
-                {actionItems.map((item, index) => (
-                  <li key={index}>
-                    <input
-                      type="text"
-                      value={item}
-                      onChange={(e) => editActionItem(index, e.target.value)}
-                      className="form-control"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Conclusion Section */}
             <div className="mb-3">
               <label className="form-label">Conclusion</label>
               <textarea
                 className="form-control"
-                rows={2}
+                rows={4}
                 placeholder="Enter Conclusion"
                 value={newConclusion}
                 onChange={(e) => setNewConclusion(e.target.value)}
@@ -364,6 +330,42 @@ export default function Form() {
                       type="text"
                       value={conclusion}
                       onChange={(e) => editConclusion(index, e.target.value)}
+                      className="form-control"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Action Items Section */}
+            <div className="mb-3">
+              <label className="form-label">Action Items/ Next Steps</label>
+              <textarea
+                className="form-control"
+                rows={4}
+                placeholder="Enter Action Item"
+                value={newActionItem}
+                onChange={(e) => setNewActionItem(e.target.value)}
+              />
+              <button
+                type="button"
+                className="btn bg-color text-white mt-2"
+                onClick={() => {
+                  if (newActionItem) {
+                    setActionItems([...actionItems, newActionItem]);
+                    setNewActionItem("");
+                  }
+                }}
+              >
+                +
+              </button>
+              <ul className="mt-2">
+                {actionItems.map((item, index) => (
+                  <li key={index}>
+                    <input
+                      type="text"
+                      value={item}
+                      onChange={(e) => editActionItem(index, e.target.value)}
                       className="form-control"
                     />
                   </li>

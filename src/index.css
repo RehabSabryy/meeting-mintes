@@ -43,6 +43,10 @@ h1 {
 }
 .content-start {
   padding-left: 33.28px;
+  padding-right: 33.28px;
+}
+.header-width {
+  width: 129.92px;
 }
 .header-img {
   width: 100%;
