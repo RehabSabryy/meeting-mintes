@@ -12,6 +12,9 @@ h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
+.header-color {
+  color: var(--secondary-color);
+}
 .bg-color {
   background-color: var(--secondary-color) !important;
 }
@@ -19,8 +22,8 @@ h1 {
   border-color: var(--primary-color) !important;
 }
 .box {
-  width: 75px;
-  height: 100px;
+  width: 48px;
+  height: 96px;
 }
 .borderr-end {
   border-right: 1.5px solid var(--primary-color) !important;
@@ -38,14 +41,16 @@ h1 {
   /* place-content: center; */
   padding:10px 20px;
 }
-
+.content-start {
+  padding-left: 33.28px;
+}
 .header-img {
   width: 100%;
   height: 100%;
   object-fit: cover; 
 }
 .header-height {
-  height: 100px;
+  height: 96px;
   overflow: hidden;
   position: relative;
 }
@@ -59,13 +64,15 @@ h1 {
 .meeting-minutes {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 310px;
 }
-
+.table-weight {
+  font-weight: normal;
+}
 .end {
-  width: 76px;
+  width: 48.64px;
 }
 .footer-svg {
   d: 100px;
@@ -81,9 +88,9 @@ h1 {
   font-size: 14px;
 }
 
-.footer-img {
+/* .footer-img {
   d: 100%; 
-}
+} */
 
 .footer-img img {
   d: 100%; 
@@ -95,7 +102,7 @@ h1 {
   object-fit: cover;
   display: block;
   background-color: var(--primary-color);
-  width: 225px;
+  width: 144px;
 }
 
 .a4-container {
@@ -113,8 +120,8 @@ h1 {
 
 .layout {
   box-sizing: border-box;
-  margin-left:  59px;
-  margin-right: 76px;
+  margin-left:  40.5px;
+  margin-right: 49px;
   border-left: 1.5px solid var(--primary-color);
   border-right: 1.5px solid var(--primary-color);
   flex-grow: 1; /* Takes up remaining space */
@@ -125,8 +132,8 @@ h1 {
 }
 .form-layout {
   box-sizing: border-box;
-  margin-left:  65.5px;
-  margin-right: 76px;
+  margin-left: 44px;
+  margin-right: 49.5px;
   border-left: 1.5px solid var(--primary-color);
   border-right: 1.5px solid var(--primary-color);
   flex-grow: 1; /* Takes up remaining space */
@@ -136,8 +143,11 @@ h1 {
   height: 100%; 
 }
 
+.content-space {
+  padding-bottom: 50.56px;
+}
 .a4-content {
-  height: 941px; 
+  height: 953px; 
   overflow: hidden; 
 }
 .page-break {

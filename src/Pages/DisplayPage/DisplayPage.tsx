@@ -9,7 +9,7 @@ export default function DisplayPage({ onPagesComputed }: any) {
   useEffect(() => {
     if (formRef.current) {
       const contentHeight = formRef.current.scrollHeight;
-      const a4HeightPx = 500; // A4 height in pixels at 96dpi (297mm)
+      const a4HeightPx = 1230; // A4 height in pixels at 96dpi (297mm)
 
       console.log("Content Height:", contentHeight);
       console.log("A4 Height:", a4HeightPx);
@@ -98,71 +98,71 @@ export default function DisplayPage({ onPagesComputed }: any) {
       <div>
         <div ref={formRef} className="a4-content" style={{ paddingTop: "48px"}}>
           <table className="table border-color borderr-top" style={{marginBottom: "48px"}}>
-            <tbody className="borderr-top">
-              <tr>
-                <th className="borderr-end">Title</th>
+            <tbody >
+              <tr className="borderr-top">
+                <th className="borderr-end text-end table-weight">Title</th>
                 <td>
                   Meeting with {formData.client} ({formData.project} - {formData.projectType})
                 </td>
               </tr>
               <tr>
-                <th className="borderr-end">Date & Time</th>
+                <th className="borderr-end text-end table-weight">Date & Time</th>
                 <td>{new Date(formData.dateTime).toLocaleString()}</td>
               </tr>
               <tr>
-                <th className="borderr-end">Location</th>
+                <th className="borderr-end text-end table-weight">Location</th>
                 <td>{formData.location}</td>
               </tr>
               <tr>
-                <th className="borderr-end">Attendees</th>
+                <th className="borderr-end text-end table-weight">Attendees</th>
                 <td>{formData.attendees ? formData.attendees : "N/A"}</td>
               </tr>
             </tbody>
           </table>
           <div>
             <h4 className="section-header">Agenda:</h4>
-            <div className="ps-4" dangerouslySetInnerHTML={{ __html: formData.agendas || "<p>No agenda provided.</p>" }} />
+            {/* <div className="ps-4" dangerouslySetInnerHTML={{ __html: formData.agendas || "<p>No agenda provided.</p>" }} /> */}
             {formData.agendas && formData.agendas.length > 0 ? (
-              <ul className="ps-4 circular-bullet pb-2">
+              <ul className="content-start circular-bullet content-space ">
                 {formData.agendas.map((item: string, index: number) => (
                   <li key={index} className="mb-3">{item}</li>
                 ))}
               </ul>
             ) : (
-              <p className="m-0 pb-5 ps-4">No action items recorded.</p>
+              <p className="m-0 content-space content-start">No action items recorded.</p>
             )}
             <h4 className="section-header">Discussion Summary:</h4>
             {formData.discussions && formData.discussions.length > 0 ? (
-              <ul className="ps-4 circular-bullet pb-2">
+              <ul className="content-start circular-bullet content-space ">
                 {formData.discussions.map((item: { title: string; description: string }, index: number) => (
-                  <li key={index}  className="mb-3"><strong>{item.title}:</strong> {item.description}</li>
+                  <li key={index}  className="mb-3"><strong>{item.title}{" "}:{" "}</strong> {item.description}</li>
                 ))}
               </ul>
             ) : (
-              <p className="ps-4">No discussions recorded.</p>
+              <p className="content-start content-space ">No discussions recorded.</p>
             )}
             <h4 className="section-header">Conclusion:</h4>
-            <div className="ps-4 mb-2" dangerouslySetInnerHTML={{ __html: formData.conclusions || "<p>No conclusion provided.</p>" }} />
+            {/* <div className="ps-4 content-space " dangerouslySetInnerHTML={{ __html: formData.conclusions || "<p>No conclusion provided.</p>" }} /> */}
             {formData.conclusions && formData.conclusions.length > 0 ? (
-              <ul className="ps-4 circular-bullet">
-                {formData.conclusions.map((item: { title: string; description: string }, index: number) => (
-                  <li key={index} className=" mb-3"><strong>{item.title}:</strong> {item.description}</li>
+              <ul className="content-start circular-bullet content-space ">
+                {formData.conclusions.map((item: string, index: number) => (
+                  <li key={index} className="mb-3">{item}</li>
                 ))}
               </ul>
             ) : (
-              <p className="ps-4">No conclusion recorded.</p>
+              <p className="m-0 content-space  content-start">No conclusion recorded.</p>
             )}
-                      </div>
+           </div>
 
             <h4 className="section-header">Action Items / Next Steps:</h4>
             {formData.actionItems && formData.actionItems.length > 0 ? (
-              <ul className="ps-4 circular-bullet pb-2">
+              <ul className="content-start circular-bullet content-space ">
                 {formData.actionItems.map((item: string, index: number) => (
                   <li key={index} className=" mb-3">{item}</li>
                 ))}
               </ul>
             ) : (
-              <p className="m-0 pb-5 ps-4">No action items recorded.</p>
+              <p className="m-0 content-space  content-start">No action items recorded.</p>
             )}
         </div>
       </div>

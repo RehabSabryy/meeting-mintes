@@ -1,12 +1,12 @@
 export default function Footer({ pageNumber }: { pageNumber: number }) {
   return (
-    <footer className="row m-0 borderr-top d-flex align-items-center" style={{ height: "80px" }}>
+    <footer className="row m-0 borderr-top d-flex align-items-center" style={{ height: "72.32px" }}>
       <div className="d-flex align-items-center justify-content-between ps-5 pe-0 w-100 h-100">
-        <div className="py-0 ps-3">
+        <div className="py-0">
           <img src="./calls.svg" alt="Call Icon" className="img-fluid img-width" />
         </div>
         <div className="py-0">
-          <img src="./email.svg" alt="Email Icon" className="img-fluid img-width" style={{ width: "450px" }} />
+          <img src="./email.svg" alt="Email Icon" className="img-fluid img-width" style={{ width: "350px" }} />
         </div>
         <div className="py-0">
           <img src="./location.svg" alt="Location Icon" className="img-fluid img-width" />
